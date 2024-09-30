@@ -45,6 +45,10 @@
             color: #0277D4;
             text-decoration: none;
         }
+        .email-link {
+            color: #0277D4;
+            font-weight: bold; /* Optional: Make the email bold */
+        }
         .app-store-link {
             display: inline-block;
             margin-top: 10px;
@@ -59,6 +63,11 @@
             background-color: #0277D4;
             color: white;
         }
+        .product-icon {
+            width: 50px; /* Adjust size as needed */
+            vertical-align: middle; /* Align with text */
+            margin-right: 10px; /* Spacing between icon and text */
+        }
     </style>
 </head>
 <body>
@@ -71,24 +80,26 @@
 <main>
     <section class="mission">
         <h3>Our Mission</h3>
-        <p>At TrustAI, our mission is to harness the power of artificial intelligence to create a safer and more secure world. We are dedicated to providing innovative solutions that ensure the online safety of our users. By embracing cutting-edge technology, we aim to build trust and reliability in every interaction, making digital spaces safer for everyone.</p>
+        <p>We leverage artificial intelligence to enhance online security and create a safer digital environment for everyone.</p>
     </section>
 
     <section class="who-we-are">
         <h3>Who We Are</h3>
-        <p>We are a team committed to delivering the best mobile security products and services for you. Our diverse group of experts is driven by a shared vision of a world where technology serves to protect individuals and their data. TrustAI aims to offer the highest protection for your online accounts while prioritizing your privacy and convenience. We value your feedback and provide 24/7 support for any inquiries. Our goal is to continuously refine our products and provide the best user experience possible, ensuring that you feel secure every time you use our services.</p>
+        <p>A dedicated team focused on delivering top-notch mobile security products while prioritizing your privacy and convenience.</p>
     </section>
 
     <section class="products">
         <h3>Our Innovative Products</h3>
-        <p><strong>Authenticator Passkey:</strong> A 2FA authenticator integrated with a password manager and passkey manager. This powerful tool not only enhances your online security but also simplifies your digital life by securely managing your passwords and passkeys in one place. TrustAI's Authenticator Passkey is designed to be user-friendly while maintaining the highest standards of security.</p>
-        <p>With our innovative approach, we aim to provide seamless integration with your favorite apps and services, making it easier than ever to protect your digital identity. Experience the future of online security with TrustAI.</p>
+        <p>
+            <img src="path/to/your/icon.png" alt="Authenticator Icon" class="product-icon"> 
+            <strong><a href="#">Authenticator: 2FA & Passkey</a></strong> - A 2FA authenticator integrated with a password manager, designed for simplicity and security.
+        </p>
         <a href="#" class="app-store-link">Download on the App Store</a>
     </section>
 </main>
 
 <footer>
-    <p>Contact: <a href="mailto:xtrustai@outlook.com">xtrustai@outlook.com</a></p>
+    <p>Contact: <a href="mailto:xtrustai@outlook.com" class="email-link">xtrustai@outlook.com</a></p>
     <p>&copy; 2024 TrustAI. All rights reserved.</p>
 </footer>
 
