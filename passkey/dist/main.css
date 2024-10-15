@@ -1,0 +1,373 @@
+ html {
+     scroll-behavior: smooth;
+ }
+
+ body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Lato', Helvetica, Arial;
+     color: black;
+ }
+
+ #home {
+     background-image: url(../images/header.jpg);
+     background-size: 100% 100%;
+     height: 28.2rem;
+     width: 51.2rem;
+     position: relative;
+ }
+
+ #home .header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0.934rem 1.2rem 0 1.2rem;
+     color: white;
+     @media (min-width: 786px) {
+      padding: 0.934rem 3.2rem 0 3.2rem;
+     }
+ }
+
+ #home .header .logo {
+     height: 1.28rem;
+     height: max(1.28rem, 12px);
+     display: flex;
+     align-items: center;
+     font-size: 0.8rem;
+     font-size: max(0.8rem, 12px);
+     font-weight: 600;
+ }
+
+ #home .header .text a {
+     text-decoration: none;
+     color: white;
+     margin-left: 1rem;
+     font-size: 0.64rem;
+     font-size: max(0.64rem, 10px);
+     @media (min-width: 480px) {
+         margin-left: 1.5rem;
+     }
+     @media (min-width: 786px) {
+         margin-left: 3rem;
+     }
+ }
+
+ #guide {
+   border: unset;
+   background: unset;
+   color: white;
+   font-size: 0.64rem;
+   font-size: max(0.64rem, 10px);
+   margin-left: 1.5rem;
+   @media (min-width: 786px) {
+      margin-left: 3rem;
+   }
+ }
+
+ #guide option {
+   border: unset;
+   background: unset;
+   background-color: #4F92FF;
+ }
+
+ #guide option:hover {
+   background-color: rgb(18, 96, 222);
+ }
+
+ #home .header .text a:first-child {
+   margin-left: 0rem;
+}
+
+ #home .title {
+     color: white;
+     font-size: 2.5rem;
+     font-weight: 700;
+     text-align: left;
+     line-height: 3.734rem;
+     position: absolute;
+     top: 8.2rem;
+     margin-left: 3.3rem;
+ }
+
+ #home .title .googleplay{
+     width: 11.894rem;
+     margin-top: 3.2rem;
+     border-radius: 0.3rem;
+ }
+
+ #home .title .detail{
+   display: flex;
+   text-align: center;
+   align-items: center;
+ }
+
+
+ #home .title .detail .split{
+   width: 1px;
+   background-color: rgba(255,255,255,0.4);
+   height: 1.5rem;
+   margin: 0 1rem;
+ }
+
+
+ #home .title .detail .item .h{
+   font-size: 0.825rem;
+   font-weight: 500;
+   line-height: 1.25rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ #home .title .detail .item .p{
+   font-size: 0.5rem;
+   font-weight: 500;
+   color: #E6E6E6;
+   line-height: 0.7rem;
+ }
+
+ .box {
+    background-image: url(../images/background.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
+ }
+
+ #apps {
+    width: 50%;
+    float: right;
+    /* align-self: end; */
+    height: 25.14rem;
+    padding: 2.6rem 6rem 0 2rem;
+}
+
+#chooseUs {
+    width: 60%;
+    float: left;
+    /* align-self: start; */
+    height: 28.14rem;
+    padding: 2.6rem 1rem 0 3rem;
+}
+
+ #aboutUs {
+     width: 65%;
+     float: right;
+     /* align-self: end; */
+     height: 22.14rem;
+     padding: 0rem 3rem 0 2rem;
+ }
+
+ .session {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    /* font-family: AlibabaPuHuiTi-Medium, AlibabaPuHuiTi; */
+ }
+
+ .session .title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.867rem;
+    position: relative;
+    height: 1.5rem;
+ }
+
+ .session .title .text{
+    z-index: 2;
+    position: absolute;
+ }
+
+ .session .title .shadow{
+    width: 4.3rem;
+    height: 0.55rem;
+    transform: skew(355deg, 356deg);
+    position: absolute;
+    top: 1.3rem;
+    z-index: 1;
+ }
+
+ .session .title .shadow_h{
+    background-color: #FFDD5D;
+ }
+ .session .title .shadow_z{
+    background-color: #6D48FE;
+ }
+ .session .title .shadow_l{
+    background-color: #4F92FF;
+ }
+
+ .session .discript{
+    color: #333333;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.774rem;
+    line-height: 1.52rem;
+ }
+
+ .session .strong{
+   font-weight: 600;
+   font-size: 1rem;
+}
+
+ .session .discript strong{
+   font-size: 1.5rem;
+   position:relative;
+   top: 0.2rem;
+ }
+
+ .session .discript div{
+    margin-bottom: 0.45rem;
+ }
+
+ .session .discript div:last-child{
+    margin-bottom: 0;
+ }
+
+ .session .content{
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.28rem;
+    margin-top: 0.774rem;
+    text-align: justify;
+ }
+
+ .session .content div{
+    margin-bottom: 0.45rem;
+ }
+
+ .session .content div:last-child{
+    margin-bottom: 0;
+ }
+
+ .GuideBox{
+   width: 80%;
+   @media only screen and (min-width: 768px) {
+       width: 60%;
+   }
+}
+
+.GuideBox h3{
+   font-size: 1.7em;
+}
+
+.GuideBox .content .text {
+   font-size: 12px;
+   letter-spacing: .05em;
+   margin: 0 0 0.4em;
+   font-weight: 400;
+   line-height: 2.5em;
+   text-align: left;
+   color: #7a8082;
+   @media only screen and (min-width: 480px) {
+      font-size: 1.0625rem;
+      font-size: max(12px, 1.0625rem);
+   }
+   @media only screen and (min-width: 768px) {
+      font-size: 0.8rem;
+      font-size: max(16px, 0.8rem);
+   }
+   @media only screen and (min-width: 1200px) {
+      font-size: 20px;
+   }
+}
+.GuideBox .content .pitem {
+   text-indent: 2em;
+}
+.GuideBox .content .liitem {
+   list-style: none;
+}
+.GuideBox .content .image {
+   max-height: 400px;
+   max-width: 100%;
+   @media only screen and (min-width: 480px) {
+       max-height: 600px;
+   }
+}
+.GuideBox .content .image_sml {
+   max-height: 500px;
+   max-width: 100%;
+   @media only screen and (min-width: 480px) {
+       max-width: 46%;
+       margin-right: 2%;
+   }
+}
+.back_home {
+   position: fixed;
+   top: 100px;
+   width: 5%;
+   min-height: 40px;
+   left: 5%;
+}
+
+#main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+ #footer {
+     width: 100%;
+     height: 3rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     background-color: black;
+     color: white;
+     font-size: 0.65rem;
+ }
+
+ #footer a{
+   color: white;
+   text-decoration: none;
+   margin: 0 0.3rem;
+}
+
+ #footer div:last-child{
+    display: flex;
+    align-items: center;
+ }
+
+ #footer .mail{
+    margin-left: 0.8rem;
+    height: 1.2rem;
+    margin-right: 0.2rem;
+ }
+
+ .backTop{
+   position: fixed;
+   right: 2rem;
+   bottom: 4rem;
+   width: 2rem;
+   height: 2rem;
+   min-width: 20px;
+   min-height: 20px;
+   max-width: 50px;
+   max-height: 50px;
+ }
+ @media only screen and (min-width: 1200px) {
+   .backTop:hover{
+      scale: 1.5;
+   }
+ }
+
+ #error{
+   margin-top: 5rem;
+ }
+
+ #error .title{
+   text-align: center;
+   font-size: 3.734rem;
+   color: #aaaaaa;
+ }
+
+ #error .msg{
+   text-align: center;
+   font-size: 1.5rem;
+   color: #aaaaaa;
+ }
+ 
