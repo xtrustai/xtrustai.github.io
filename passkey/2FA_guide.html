@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Artemis Lab</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="apps, 2FA">
+        <meta name="description" content="this is Artemis Lab page.">
+
+        <meta property="og:site_name" content="Artemis Lab">
+        <meta property="og:title" content="Artemis Lab">
+        <meta property="og:description" content="this is Artemis Lab page.">
+        <link rel="stylesheet" href="./dist/main.css">
+        <script src="./dist/main.js"></script>
+        <link rel="shortcut icon" href="./favicon.ico">
+    </head>
+    <body>
+        <div id="home">
+            <div class="header">
+                <div class="logo" onclick="openUrl('')">
+                    <img src="./images/logo.png" style="height: 100%;margin-right: 5px;" alt="logo"></img>
+                    <div>Artemis Lab</div>
+                </div>
+                <div class="text">
+                    <a onclick="openUrl('#apps')">PRODUCT</a>
+                    <a onclick="openUrl('#chooseUs')">FEATURES</a>
+                    <a onclick="openUrl('#aboutUs')">ABOUT US</a>
+                    <select id="guide" value="0">
+                        <option value="0" style="display: none;">2FA GUIDE</option>
+                        <option value="1">Instagram</option>
+                        <option value="2">Facebook</option>
+                    </select>
+                </div>
+            </div>
+            <div class="title">
+                <div>
+                    Authenticator App
+                    </br>
+                    2FA <span style="font-weight: 100;">I</span> MFA <span style="font-weight: 100;">I</span> OTP
+                </div>
+                <a
+                    href="https://play.google.com/store/apps/details?id=otp.authenticator.app.authentication.password&hl=en&gl=us">
+                    <img class="googleplay" src="./images/googleplay.jpg" alt="google play">
+                </a>
+                <div class="detail">
+                    <div class="item">
+                        <div class="h">4.7
+                            <img style="width: 0.825rem;" src="./images/star.png" alt="">
+                        </div>
+                        <div class="p">2K reviews</div>
+                    </div>
+                    <div class="split"></div>
+                    <div class="item">
+                        <div class="h">1M+</div>
+                        <div class="p">Downloads</div>
+                    </div>
+                    <div class="split"></div>
+                    <div class="item">
+                        <div class="h">1M+</div>
+                        <div class="p">User</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="main">
+            
+        </div>
+
+        <img src="./images/backTop.png" alt="Back to Top" class="backTop" onclick="backTop()">
+        
+        <div id="error" style="display: none;">
+            <div class="title">error</div>
+            <div class="msg">:( Sorry, the data is lost, please check the link</div>
+        </div>
+
+        <script>
+            let searchURL = window.location.search
+            searchURL = searchURL.substring(1, searchURL.length);  
+            let name = searchURL.split("&")[0].split("=")[1]
+            fetch('./data/' + name + '.json')
+                .then((response) => response.json())
+                .then((json) => addDomList(json))
+                .catch(() => {
+                    fetchError()
+                })
+        </script>
+    </body>
+</html>

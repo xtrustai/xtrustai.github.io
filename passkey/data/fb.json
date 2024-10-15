@@ -1,0 +1,306 @@
+{
+    "name": "Facebook",
+    "categore": "Social",
+    "logo": "images/Facebook/logo.png",
+    "content": {
+        "title": "Activate 2FA for Facebook",
+        "detail": [
+            {
+                "tag": "h3",
+                "content": "How to activate 2FA for Facebook on your phone"
+            },
+            {
+                "tag": "p",
+                "content": "Facebook offers different two-factor authentication through authentication apps, SMS, and physical security keys. The platform recommends using an authentication app, which has an edge over SMS and doesn't require a separate hardware device. And it should take less than a minute to set up."
+            },
+            {
+                "tag": "li",
+                "content": "1. Install <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a>"
+            },
+            {
+                "tag": "p",
+                "content": "The best way to manage all your 2FA (two-factor authentication) accounts is to use the<a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">\"Authenticator App - 2FA\"</a>. This app offers numerous advantages, such as providing a centralized platform for all your 2FA accounts and allowing you to backup and restore effortlessly. Download by click <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">\"Authenticator App - 2FA\"</a> on your device, or simply search for it in your device's GooglePlay."
+            },
+            {
+                "tag": "li",
+                "content": "2. Open the Facebook app on your phone."
+            },
+            {
+                "tag": "li",
+                "content": "3. On Android, tap the three vertical lines in the upper-right corner. On iOS, click the menu button in the lower-right corner."
+            },
+            {
+                "tag": "img",
+                "content": "images/Facebook/1.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Facebook/2.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "4. Tap Settings & privacy and then tap Settings. All other steps remain the same."
+            },
+            {
+                "tag": "img",
+                "content": "images/Facebook/3.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Facebook/4.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "5. Click Meta Accounts Center at the top of the page."
+            },
+            {
+                "tag": "li",
+                "content": "6. Tap Password and security."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/5.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/6.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "7. Select Two-factor authentication in the first segment."
+            },
+            {
+                "tag": "li",
+                "content": "8. If you linked your Instagram account with Facebook, you'll see more than accounts on the next page. Choose your Facebook account to continue. You may need to confirm your password."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/7.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/8.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "9. Tap “Authentication App”."
+            },
+            {
+                "tag": "li",
+                "content": "10. Facebook shows an instruction guide for your authentication app. Now tap “View barcode/QR code”. A screen with a QR code should pop up."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/9.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/10.png"
+            },
+            {
+                "tag": "li",
+                "content": "11. If you have another phone installed <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a>, then use Authenticator app on the other phone to scan the QR code. If no, then capture the screenshot with the QR code and switch to <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a> on the same phone. Now in our Authenticator app, you can scan the screenshot by locating it in the album."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/11.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/12.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "12. Assume you scan the QR code successfully, it means you already configure the security key in our authentication app. You should see the 6-digit code in <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a> changed every 30 seconds."
+            },
+            {
+                "tag": "li",
+                "content": "13. Enter the 6-digit code shown in our Authenticator app into Facebook, then click the blue Next button below the screen before it expires."
+            },
+            {
+                "tag": "li",
+                "content": "14. If it's done right, the next page informs you that your Two-factor authentication is on. Click Done to exit the page."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/13.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/14.jpg"
+            },
+            {
+                "tag": "p",
+                "content": "The process is similar if you prefer SMS or hardware token for your Facebook 2FA method. You only need to follow the on-screen instructions to complete the process. Meanwhile, you can add either as a backup in case your authenticator app acts up (more on that later). However, hackers or anyone who has access to your phone or can intercept your text messages can hack your Facebook account, and that's a reason to use 2FA from an app or hardware token."
+            },
+            {
+                "tag": "h3",
+                "content": "How to activate 2FA for Facebook in your browser"
+            },
+            {
+                "tag": "p",
+                "content": "If you use Facebook mainly from your computer, activating two-factor authentication is similar."
+            },
+            {
+                "tag": "li",
+                "content": "1. Open www.facebook.com in your favorite browser."
+            },
+            {
+                "tag": "li",
+                "content": "2. Click your profile picture in the upper-right corner of the page."
+            },
+            {
+                "tag": "li",
+                "content": "3. Select Settings & Privacy from the drop-down menu."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/15.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "4. Click Settings."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/16.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "5. Click Meta Accounts Center on the left side."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/17.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "6. Switch to the Password and security tab on the left."
+            },
+            {
+                "tag": "li",
+                "content": "7. Select Two-factor authentication."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/18.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "8. Choose your Facebook account from the list if you have multiple options."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/19.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "9. Choose your security method “Authenticator app” and click Next."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/20.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "10. Open <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a> on your phone and scan the QR code."
+            },
+            {
+                "tag": "li",
+                "content": "11. Tap Next on your computer to continue."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/21.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "12. Find the generated 6-digit code on <a href=\"https://play.google.com/store/apps/details?id=authenticator.app.otp.mfa.authentication\">Authenticator App - 2FA</a>, then type it into the Facebook text field."
+            },
+            {
+                "tag": "li",
+                "content": "13. Click Next before the code expires."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/22.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "14. Click Done to complete the 2FA process."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/23.jpg"
+            },
+            {
+                "tag": "h3",
+                "content": "How to not get locked out of your Facebook account"
+            },
+            {
+                "tag": "li",
+                "content": "Setting up 2FA on your Facebook account is paramount to protect it from hackers. However, you could get locked out of your account if your security methods aren't available. Perhaps after losing access to your SIM card, authentication app, or token hardware. Before that happens, ensure you have a backup with these additional security methods."
+            },
+            {
+                "tag": "p",
+                "content": "<strong>Save your recovery codes somewhere</strong>"
+            },
+            {
+                "tag": "p",
+                "content": "Facebook offers five recovery codes if you can't access your 2FA method. Save them somewhere you can always access."
+            },
+            {
+                "tag": "li",
+                "content": "1. Navigate to the Two-factor authentication settings by following the first few steps above. (Settings > Meta Accounts Center > Password & security > Two-factor authentication)."
+            },
+            {
+                "tag": "li",
+                "content": "2. Under How to get login codes, select Additional methods."
+            },
+            {
+                "tag": "li",
+                "content": "3. Tap Recovery codes."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/24.jpg"
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/25.jpg"
+            },
+            {
+                "tag": "li",
+                "content": "4. Write the codes in a safe place. You can use each recovery code once."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/26.jpg"
+            },
+            {
+                "tag": "h3",
+                "content": "Add a backup security method"
+            },
+            {
+                "tag": "p",
+                "content": "Did you set up 2FA with an authentication app? Add SMS or Security Key as a second method. This gives you options when a security method doesn't work."
+            },
+            {
+                "tag": "li",
+                "content": "1. Navigate to the Two-factor authentication settings on Facebook (Settings > Meta Accounts Center > Password & security > Two-factor authentication)."
+            },
+            {
+                "tag": "li",
+                "content": "2. Under Add a backup method, select another security method."
+            },
+            {
+                "tag": "li",
+                "content": "3. Complete setting up your backup security, as explained earlier."
+            },
+            {
+                "tag": "img",
+                "content": "images/Common/27.jpg"
+            }
+        ]
+    }
+}
