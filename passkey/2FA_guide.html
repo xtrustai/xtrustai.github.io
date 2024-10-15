@@ -79,7 +79,7 @@
             let searchURL = window.location.search
             searchURL = searchURL.substring(1, searchURL.length);  
             let name = searchURL.split("&")[0].split("=")[1]
-            fetch('./data/' + name + '.json')
+            fetch('./data/fb.json')
                 .then((response) => response.json())
                 .then((json) => addDomList(json))
                 .catch(() => {
