@@ -1,47 +1,114 @@
 <!DOCTYPE html>
-<html>
-    <head>
-   
-       <meta charset="utf-8">
-       <title>XTrustAI</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="apps, 2FA">
-        <meta name="description" content="this is XTrustAI page.">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA Setup Guide - Authenticator: 2FA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0277D4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 10px 0;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .products {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0277D4;
+            color: white;
+        }
+        a {
+            color: #0277D4;
+            text-decoration: none;
+        }
+        .app-store-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #0277D4;
+            border: 1px solid #0277D4;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .app-store-link:hover {
+            background-color: #0277D4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
 
-        <meta property="og:site_name" content="XTrustAI">
-        <meta property="og:title" content="XTrustAI">
-        <meta property="og:description" content="this is XTrustAI page.">
-        <link rel="stylesheet" href="./dist/main.css">
+<header>
+    <h1>2FA Setup Guide</h1>
+</header>
 
-        
-        <script src="./dist/main.js"></script>
-    
-    </head>
-    <body>
-        
-        
-        <div id="main">
-            
-        </div>
+<main>
+    <section class="step">
+        <h2>Step 1: Download & Install the App</h2>
+        <p>Go to the <a href="https://apps.apple.com" class="app-store-link">App Store</a> and search for "Authenticator: 2FA & Passkey". Click "Install" and open the app once installed.</p>
+    </section>
 
-        <img src="./images/backTop.png" alt="Back to Top" class="backTop" onclick="backTop()">
-        
-        <div id="error" style="display: none;">
-            <div class="title">error</div>
-            <div class="msg">:( Sorry, the data is lost, please check the link</div>
-        </div>
+    <section class="step">
+        <h2>Step 2: Find the QR Code or Manual Key</h2>
+        <p>To enable 2FA, you’ll need a **QR code** or **manual key** from the service you’re securing. Here’s how to find it for most apps and services:</p>
+        <ul>
+            <li>**Log in** to the account you want to secure (e.g., Google, Facebook, Dropbox).</li>
+            <li>Navigate to **Security Settings** or **Account Settings**.</li>
+            <li>Look for an option to enable **Two-Factor Authentication (2FA)** or **Multi-Factor Authentication (MFA)**.</li>
+            <li>Once enabled, you’ll typically see a QR code or a manual key. This is what you’ll scan or enter into the Authenticator app.</li>
+        </ul>
+        <p>If you can’t find the option, look for help in the service’s **FAQ** or **Support** section by searching for "Two-Factor Authentication setup."</p>
+    </section>
 
-        <script>
-            let searchURL = window.location.search
-            searchURL = searchURL.substring(1, searchURL.length);  
-            let name = searchURL.split("&")[0].split("=")[1]
-            fetch('./data/fb.json')
-                .then((response) => response.json())
-                .then((json) => addDomList(json))
-                .catch(() => {
-                    fetchError()
-                })
-        </script>
-    </body>
+    <section class="step">
+        <h2>Step 3: Add Your Account to the Authenticator: 2FA & Passkey App</h2>
+        <p>Open the "Authenticator: 2FA & Passkey" app and tap **"Add Account"**. Use the app’s camera to **scan the QR code** displayed on the service’s security page. If you don’t have a QR code, choose the option to manually enter the **key** provided by the service.</p>
+    </section>
+
+    <section class="step">
+        <h2>Step 4: Generate OTP Codes</h2>
+        <p>Once the account is added, the app will generate **One-Time Passwords (OTPs)**. These codes refresh every 30 seconds and can be used to log into your service with enhanced security.</p>
+    </section>
+
+    <section class="step">
+        <h2>Step 5: Save Backup Codes</h2>
+        <p>Many services offer backup codes during the 2FA setup. Save these codes in a safe location as a backup method to access your account if you lose your device.</p>
+    </section>
+
+    <section class="step">
+        <h2>Step 6: Test Your 2FA Setup</h2>
+        <p>Go to the service where you enabled 2FA and log in. When prompted, open the "Authenticator: 2FA & Passkey" app and enter the code displayed. This ensures your account is securely protected with Two-Factor Authentication.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 TrustAI. All rights reserved.</p>
+</footer>
+
+</body>
 </html>
