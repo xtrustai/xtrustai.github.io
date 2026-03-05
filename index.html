@@ -1,479 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TrustAI - Better World Powered by AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustAI - Better World Powered by AI</title>
 
-<style>
+  <style>
+    :root{
+      --brand:#0277D4;          /* your original blue */
+      --bg:#0b1220;
+      --surface:rgba(255,255,255,.08);
+      --surface2:rgba(255,255,255,.12);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.75);
+      --border:rgba(255,255,255,.16);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius:16px;
+    }
 
-:root{
---brand:#0277D4;
---bg:#0b1220;
---text:#eaf2ff;
---muted:rgba(234,242,255,.75);
---border:rgba(255,255,255,.16);
---shadow:0 20px 60px rgba(0,0,0,.35);
---radius:16px;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(2,119,212,.30), transparent 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(2,119,212,.18), transparent 55%),
+        radial-gradient(900px 700px at 55% 100%, rgba(2,119,212,.14), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:28px 16px;
+    }
 
-*{box-sizing:border-box}
+    .container{
+      width:min(1120px, 92vw);
+      border:1px solid var(--border);
+      border-radius:calc(var(--radius) + 10px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter: blur(10px);
+    }
 
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:var(--bg);
-color:var(--text);
-display:flex;
-justify-content:center;
-padding:28px 16px;
-}
+    header{
+      padding:28px 26px;
+      background: linear-gradient(135deg, rgba(2,119,212,.55), rgba(2,119,212,.18));
+      border-bottom:1px solid var(--border);
+    }
 
-.container{
-width:min(1120px,92vw);
-border:1px solid var(--border);
-border-radius:calc(var(--radius) + 10px);
-overflow:hidden;
-box-shadow:var(--shadow);
-background:#0f172a;
-}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
 
-header{
-padding:28px 26px;
-background:#0277D4;
-border-bottom:1px solid var(--border);
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
 
-.topbar{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:18px;
-}
+    .brand-badge{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.85), rgba(255,255,255,.15) 45%, transparent 60%),
+        linear-gradient(135deg, rgba(2,119,212,1), rgba(2,119,212,.65));
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow: 0 10px 30px rgba(2,119,212,.25);
+    }
 
-.brand{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:800;
-}
+    nav a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      margin-left:12px;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    nav a:hover{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+    }
 
-.brand-badge{
-width:34px;
-height:34px;
-border-radius:12px;
-background:white;
-opacity:.15;
-}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:12px;
-font-size:14px;
-padding:8px 10px;
-border-radius:8px;
-}
+    .hero-left h1{
+      margin:0;
+      font-size:36px;
+      line-height:1.12;
+      letter-spacing:.2px;
+    }
+    .hero-left p{
+      margin:12px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 62ch;
+      line-height:1.7;
+    }
 
-nav a:hover{
-background:rgba(255,255,255,.15);
-}
+    .hero-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
 
-.hero{
-display:grid;
-grid-template-columns:1.25fr .75fr;
-gap:18px;
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.16);
+      transition:.2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
 
-.hero-left h1{
-margin:0;
-font-size:36px;
-}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(2,119,212,1), rgba(2,119,212,.75));
+      color:white;
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(2,119,212,.25);
+    }
+    .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn-secondary{
+      background: rgba(255,255,255,.06);
+      color:white;
+    }
+    .btn-secondary:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
 
-.hero-left p{
-margin:12px 0 0;
-color:var(--muted);
-font-size:15px;
-line-height:1.7;
-}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:rgba(255,255,255,.90);
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      width:fit-content;
+    }
 
-.hero-cta{
-margin-top:18px;
-}
+    .hero-right{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
 
-.btn{
-display:inline-block;
-padding:11px 16px;
-border-radius:10px;
-text-decoration:none;
-font-weight:700;
-font-size:14px;
-}
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
 
-.btn-primary{
-background:white;
-color:#0277D4;
-}
+    .kpi-card{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      border-radius:14px;
+      padding:12px;
+    }
+    .kpi-card .label{ color: var(--muted); font-size:12px; }
+    .kpi-card .value{ font-weight:800; font-size:16px; margin-top:6px; }
 
-.btn-primary:hover{
-opacity:.9;
-}
+    main{
+      padding:22px 26px 26px 26px;
+    }
 
-.hero-right{
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:16px;
-background:#111827;
-}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
 
-.kpi{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      padding:16px;
+    }
 
-.kpi-card{
-border:1px solid var(--border);
-border-radius:12px;
-padding:12px;
-}
+    .card h3{
+      margin:0 0 10px 0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
 
-.kpi-card .label{
-font-size:12px;
-color:var(--muted);
-}
+    .values ul{
+      margin:10px 0 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+    .values li{ margin:6px 0; }
 
-.kpi-card .value{
-font-weight:800;
-margin-top:4px;
-}
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.12);
+      margin:18px 0;
+    }
 
-main{
-padding:22px 26px 26px;
-}
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .section-title h3{ margin:0; padding:0; font-size:18px; }
+    .section-title .muted{ color:var(--muted); font-size:13px; margin:0; }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-}
+    .products{
+      margin-top:14px;
+    }
 
-.card{
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:16px;
-background:#111827;
-}
+    .product-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
 
-.card h3{
-margin:0 0 10px;
-}
+    .product{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:14px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      min-height: 154px;
+    }
 
-.card p{
-margin:0;
-color:var(--muted);
-font-size:14px;
-line-height:1.6;
-}
+    .product-icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      object-fit: cover;
+      flex: 0 0 48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:rgba(255,255,255,.92);
+    }
 
-.values ul{
-margin:10px 0 0;
-padding-left:18px;
-color:var(--muted);
-}
+    .product h4{
+      margin:0;
+      font-size:15px;
+      line-height:1.3;
+    }
 
-.divider{
-height:1px;
-background:rgba(255,255,255,.12);
-margin:22px 0;
-}
+    .product h4 a{
+      color:white;
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    .product h4 a:hover{ border-bottom-color: rgba(255,255,255,.55); }
 
-.product-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
+    .product p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.6;
+    }
 
-.product{
-display:flex;
-gap:14px;
-padding:14px;
-border-radius:var(--radius);
-border:1px solid var(--border);
-background:#111827;
-}
+    .product-actions{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-.product-icon{
-width:48px;
-height:48px;
-border-radius:12px;
-background:#0277D4;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:700;
-}
+    .btn-mini{
+      padding:9px 12px;
+      border-radius:12px;
+      font-size:13px;
+    }
 
-.product h4{
-margin:0;
-}
+    .tagrow{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
 
-.product p{
-margin:8px 0 0;
-font-size:13px;
-color:var(--muted);
-}
+    .tag{
+      font-size:12px;
+      color:rgba(255,255,255,.88);
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
 
-.product-actions{
-margin-top:10px;
-}
+    footer{
+      padding:18px 26px;
+      border-top:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:rgba(255,255,255,.88);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
 
-.btn-mini{
-padding:8px 12px;
-font-size:13px;
-border-radius:8px;
-background:#0277D4;
-color:white;
-text-decoration:none;
-}
+    footer a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+      margin-right:12px;
+      font-size:13px;
+    }
+    footer a:hover{ border-bottom-color: rgba(255,255,255,.55); }
 
-.btn-mini:hover{
-opacity:.9;
-}
+    .small{
+      font-size:12px;
+      color:rgba(255,255,255,.70);
+    }
 
-.testimonials{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.quote{
-border:1px solid var(--border);
-background:#111827;
-border-radius:var(--radius);
-padding:14px;
-color:var(--muted);
-}
-
-footer{
-padding:18px 26px;
-border-top:1px solid var(--border);
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-}
-
-footer a{
-color:white;
-text-decoration:none;
-margin-right:12px;
-font-size:13px;
-}
-
-.small{
-font-size:12px;
-color:var(--muted);
-}
-
-@media (max-width:980px){
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.product-grid{
-grid-template-columns:1fr;
-}
-
-.testimonials{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .product-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <span>TrustAI</span>
+        </div>
+        <nav>
+          <a href="#products">Products</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="tos">Terms</a>
+          <a href="mailto:xtrustai@outlook.com">Contact</a>
+        </nav>
+      </div>
 
-<header>
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Better world, powered by AI — built on trust.</h1>
+          <p>
+            TrustAI builds privacy-first mobile products that help people stay secure, productive, and confident online.
+            We ship practical AI features with clear behavior, clear policies, and reliable performance.
+          </p>
 
-<div class="topbar">
-<div class="brand">
-<div class="brand-badge"></div>
-<span>TrustAI</span>
-</div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#products">Explore Products</a>
+          </div>
 
-<nav>
-<a href="#products">Products</a>
-<a href="privacy.html">Privacy</a>
-<a href="tos">Terms</a>
-<a href="mailto:xtrustai@outlook.com">Contact</a>
-</nav>
-</div>
+          <div class="tagrow">
+            <span class="tag">Privacy-first</span>
+            <span class="tag">Security-focused</span>
+            <span class="tag">Fast &amp; lightweight</span>
+          </div>
+        </div>
 
-<div class="hero">
+        <div class="hero-right">
+          <div class="pill"><span aria-hidden="true">🔒</span><span>Privacy-first by design</span></div>
+          <div class="kpi">
+            <div class="kpi-card">
+              <div class="label">Focus</div>
+              <div class="value">Security + AI</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Platforms</div>
+              <div class="value">iOS • Mobile</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Principle</div>
+              <div class="value">Simple UX</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Support</div>
+              <div class="value">Email</div>
+            </div>
+          </div>
+          <div class="pill"><span aria-hidden="true">🛡️</span><span>Clear policies &amp; disclosures</span></div>
+        </div>
+      </div>
+    </header>
 
-<div class="hero-left">
+    <main>
 
-<h1>AI products built for security, clarity, and trust.</h1>
+      <div class="grid">
+        <section class="card mission">
+          <h3>Our Mission</h3>
+          <p>
+            We leverage AI to enhance security and productivity — without trading away privacy.
+            Our products are designed to be easy to understand, easy to control, and safe by default.
+          </p>
+        </section>
 
-<p>
-TrustAI builds privacy-first mobile products that help people stay secure,
-productive, and confident online.
-</p>
+        <section class="card who-we-are">
+          <h3>Who We Are</h3>
+          <p>
+            A mobile-first product team focused on reliability, privacy, and clean user experience.
+            We build tools that solve real problems and earn long-term user trust.
+          </p>
+        </section>
 
-<div class="hero-cta">
-<a class="btn btn-primary" href="#products">Explore Products</a>
-</div>
+        <section class="card values">
+          <h3>Our Values</h3>
+          <ul>
+            <li><strong>Integrity:</strong> Transparent policies and honest product design.</li>
+            <li><strong>Innovation:</strong> Practical AI, not hype.</li>
+            <li><strong>Customer-Centricity:</strong> We optimize for user trust and clarity.</li>
+            <li><strong>Security:</strong> We treat privacy and security as foundational.</li>
+          </ul>
+        </section>
 
-</div>
+        <section class="card">
+          <h3>Built for Clarity</h3>
+          <p>
+            We prioritize simple flows, clear permissions, and straightforward controls —
+            so users always understand what the app does and what choices they have.
+          </p>
+        </section>
+      </div>
 
-<div class="hero-right">
+      <div class="divider"></div>
 
-<div class="kpi">
+      <section id="products" class="products">
+        <div class="section-title">
+          <h3>Our Products</h3>
+          <p class="muted">From the AQUAWOOD PTE. LTD. App Store developer page.</p>
+        </div>
 
-<div class="kpi-card">
-<div class="label">Focus</div>
-<div class="value">Security + AI</div>
-</div>
+        <div class="product-grid">
 
-<div class="kpi-card">
-<div class="label">Platforms</div>
-<div class="value">iOS Mobile</div>
-</div>
+          <!-- Authenticator -->
+          <div class="product">
+            <img src="passkey/icon.png" alt="Authenticator Icon" class="product-icon" />
+            <div>
+              <h4><a href="https://apps.apple.com/us/app/authenticator-2fa-passkey/id6736977421">Authenticator: 2FA &amp; Passkey</a></h4>
+              <p>
+                Secure your accounts with 2FA and modern sign-in methods — designed for everyday simplicity.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-primary btn-mini" href="https://apps.apple.com/us/app/authenticator-2fa-passkey/id6736977421">View on App Store</a>
+              </div>
+            </div>
+          </div>
 
-<div class="kpi-card">
-<div class="label">Design</div>
-<div class="value">Simple UX</div>
-</div>
+          <!-- AI Translator -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true">TR</div>
+            <div>
+              <h4><a href="https://apps.apple.com/us/app/ai-translator-photo-voice/id6748001265">AI Translator: Photo, Voice</a></h4>
+              <p>
+                Translate text, speech, and images with AI-assisted accuracy for travel and everyday work.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-primary btn-mini" href="https://apps.apple.com/us/app/ai-translator-photo-voice/id6748001265">View on App Store</a>
+              </div>
+            </div>
+          </div>
 
-<div class="kpi-card">
-<div class="label">Support</div>
-<div class="value">Email Help</div>
-</div>
+          <!-- AI PDF Converter -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true">PDF</div>
+            <div>
+              <h4><a href="https://apps.apple.com/us/app/ai-pdf-converter-files-to-pdf/id6742937711">AI PDF Converter: Files to PDF</a></h4>
+              <p>
+                Convert documents and images into clean PDFs — built for speed, clarity, and simple sharing.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-primary btn-mini" href="https://apps.apple.com/us/app/ai-pdf-converter-files-to-pdf/id6742937711">View on App Store</a>
+              </div>
+            </div>
+          </div>
 
-</div>
-</div>
+          <!-- AI Passport & ID Photo Maker -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true">ID</div>
+            <div>
+              <h4><a href="https://apps.apple.com/us/app/ai-passport-id-photo-maker/id6742937810">AI Passport &amp; ID Photo Maker</a></h4>
+              <p>
+                Create compliant passport and ID photos with AI-assisted background cleanup and sizing.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-primary btn-mini" href="https://apps.apple.com/us/app/ai-passport-id-photo-maker/id6742937810">View on App Store</a>
+              </div>
+            </div>
+          </div>
 
-</div>
+        </div>
+      </section>
 
-</header>
+    </main>
 
-<main>
+    <footer>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tos">Terms of Service</a>
+        <a href="mailto:xtrustai@outlook.com">Contact Us</a>
+      </div>
+      <div class="small">© 2024 TrustAI. All rights reserved.</div>
+    </footer>
 
-<div class="grid">
-
-<section class="card">
-<h3>Our Mission</h3>
-<p>
-We leverage AI to enhance online security and create a safer digital
-environment for everyone.
-</p>
-</section>
-
-<section class="card">
-<h3>Who We Are</h3>
-<p>
-A product team focused on privacy, reliability, and great mobile experiences.
-</p>
-</section>
-
-<section class="card values">
-<h3>Our Values</h3>
-
-<ul>
-<li><strong>Integrity</strong> — transparent products and policies</li>
-<li><strong>Innovation</strong> — practical AI solutions</li>
-<li><strong>Customer Focus</strong> — clear user experiences</li>
-<li><strong>Security</strong> — privacy-first design</li>
-</ul>
-
-</section>
-
-</div>
-
-<div class="divider"></div>
-
-<section id="products">
-
-<h3>Our Products</h3>
-
-<div class="product-grid">
-
-<div class="product">
-<div class="product-icon">ID</div>
-<div>
-<h4>AI Passport & ID Photo Maker</h4>
-<p>Create compliant passport photos using AI background processing.</p>
-</div>
-</div>
-
-<div class="product">
-<div class="product-icon">TR</div>
-<div>
-<h4>AI Translator</h4>
-<p>Translate voice, text, and images instantly.</p>
-</div>
-</div>
-
-<div class="product">
-<div class="product-icon">PDF</div>
-<div>
-<h4>AI PDF Converter</h4>
-<p>Convert documents and images into clean PDFs.</p>
-</div>
-</div>
-
-<div class="product">
-<div class="product-icon">DM</div>
-<div>
-<h4>Decor Master</h4>
-<p>AI powered interior design inspiration.</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="testimonials">
-
-<div class="quote">
-<b>Simple and reliable.</b><br>
-Clean UI and fast setup.
-</div>
-
-<div class="quote">
-<b>Feels trustworthy.</b><br>
-Transparent and privacy focused.
-</div>
-
-</section>
-
-</main>
-
-<footer>
-
-<div>
-<a href="privacy.html">Privacy Policy</a>
-<a href="tos">Terms of Service</a>
-<a href="mailto:xtrustai@outlook.com">Contact</a>
-</div>
-
-<div class="small">© 2024 TrustAI. All rights reserved.</div>
-
-</footer>
-
-</div>
-
+  </div>
 </body>
 </html>
