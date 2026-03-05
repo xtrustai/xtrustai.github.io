@@ -1,150 +1,636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustAI - Safer World Through AI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: left;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 70vw; /* Sets the container to half the viewport width */
-            background-color: white;
-            color:  #333;
-            padding: 0px;
-            text-align: center;
-        }
-        header {
-           
-            background-color: #0277D4;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.8em; /* Smaller font size for the header text */
-        }
-        main {
-            padding: 20px;
-            text-align: left;
-            
-        }
-        h1, h2, h3 {
-            margin: 0;
-            padding: 10px 0;
-        }
-        .mission, .who-we-are, .values, .products, .testimonials, .faq {
-            margin-bottom: 20px;
-        }
-        .products {
-            margin: 20px 0;
-            padding: 10px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0277D4;
-            color: white;
-        }
-        a {
-            color: #0277D4;
-            text-decoration: none;
-        }
-        .email-link {
-            color: #FFD700; /* Bright color for better visibility */
-            font-weight: bold; /* Optional: Make the email bold */
-        }
-        .app-store-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #0277D4;
-            border: 1px solid #0277D4;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .app-store-link:hover {
-            background-color: #0277D4;
-            color: white;
-        }
-        .product-icon {
-            width: 50px; /* Adjust size as needed */
-            vertical-align: middle; /* Align with text */
-            margin-right: 10px; /* Spacing between icon and text */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustAI - Safer World Through AI</title>
+
+  <style>
+    :root{
+      --brand:#0277D4;
+      --brand2:#00B2FF;
+      --bg:#0b1220;
+      --surface:rgba(255,255,255,.08);
+      --surface2:rgba(255,255,255,.12);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.75);
+      --border:rgba(255,255,255,.16);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(2,119,212,.30), transparent 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(0,178,255,.22), transparent 55%),
+        radial-gradient(900px 700px at 55% 100%, rgba(2,119,212,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:28px 16px;
+    }
+
+    .container{
+      width:min(1120px, 92vw);
+      border:1px solid var(--border);
+      border-radius:calc(var(--radius) + 10px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter: blur(10px);
+    }
+
+    header{
+      padding:28px 26px;
+      background: linear-gradient(135deg, rgba(2,119,212,.55), rgba(0,178,255,.20));
+      border-bottom:1px solid var(--border);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .brand-badge{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.85), rgba(255,255,255,.15) 45%, transparent 60%),
+        linear-gradient(135deg, var(--brand), var(--brand2));
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow: 0 10px 30px rgba(2,119,212,.25);
+    }
+
+    nav a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      margin-left:12px;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    nav a:hover{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .hero-left h1{
+      margin:0;
+      font-size:36px;
+      line-height:1.12;
+      letter-spacing:.2px;
+    }
+    .hero-left p{
+      margin:12px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 62ch;
+      line-height:1.7;
+    }
+
+    .hero-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.16);
+      transition:.2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:white;
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(2,119,212,.25);
+    }
+    .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn-secondary{
+      background: rgba(255,255,255,.06);
+      color:white;
+    }
+    .btn-secondary:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:rgba(255,255,255,.90);
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      width:fit-content;
+    }
+
+    .hero-right{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+
+    .kpi-card{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      border-radius:14px;
+      padding:12px;
+    }
+    .kpi-card .label{ color: var(--muted); font-size:12px; }
+    .kpi-card .value{ font-weight:800; font-size:16px; margin-top:6px; }
+
+    main{
+      padding:22px 26px 26px 26px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      padding:16px;
+    }
+
+    .card h3{
+      margin:0 0 10px 0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .values ul{
+      margin:10px 0 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+    .values li{ margin:6px 0; }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.12);
+      margin:18px 0;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .section-title h3{ margin:0; padding:0; font-size:18px; }
+    .section-title .muted{ color:var(--muted); font-size:13px; margin:0; }
+
+    .products{
+      margin-top:14px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .product{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:14px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      min-height: 154px;
+    }
+
+    .product-icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      object-fit: cover;
+      flex: 0 0 48px;
+    }
+
+    .product h4{
+      margin:0;
+      font-size:15px;
+      line-height:1.3;
+    }
+
+    .product a{
+      color:white;
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    .product a:hover{ border-bottom-color: rgba(255,255,255,.55); }
+
+    .product p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.6;
+    }
+
+    .product-actions{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn-mini{
+      padding:9px 12px;
+      border-radius:12px;
+      font-size:13px;
+    }
+
+    .tagrow{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .tag{
+      font-size:12px;
+      color:rgba(255,255,255,.88);
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+
+    .testimonials{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .quote{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      border-radius: var(--radius);
+      padding:14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+    .quote b{ color:rgba(255,255,255,.92); }
+
+    .faq p{
+      margin:10px 0 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    footer{
+      padding:18px 26px;
+      border-top:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:rgba(255,255,255,.88);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    footer a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+      margin-right:12px;
+      font-size:13px;
+    }
+    footer a:hover{ border-bottom-color: rgba(255,255,255,.55); }
+
+    .small{
+      font-size:12px;
+      color:rgba(255,255,255,.70);
+    }
+
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .product-grid{ grid-template-columns: 1fr; }
+      .testimonials{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
+  <div class="container">
 
-<header>
-    <h1>TrustAI</h1>
-    <h2>Embracing AI Technology for a Safer World</h2>
-</header>
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <span>TrustAI</span>
+        </div>
+        <nav>
+          <a href="#products">Products</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="tos">Terms</a>
+          <a href="mailto:xtrustai@outlook.com">Contact</a>
+        </nav>
+      </div>
 
-<main>
-    <section class="mission">
-        <h3>Our Mission</h3>
-        <p>We leverage artificial intelligence to enhance online security and create a safer digital environment for everyone. Our goal is to empower individuals and businesses with the tools they need to protect their data and maintain privacy.</p>
-    </section>
+      <div class="hero">
+        <div class="hero-left">
+          <h1>AI products built for security, clarity, and trust.</h1>
+          <p>
+            TrustAI builds privacy-first mobile products that help people stay secure, productive, and confident online.
+            We focus on clarity, safety, and performance — powered by modern AI.
+          </p>
 
-    <section class="who-we-are">
-        <h3>Who We Are</h3>
-        <p>A dedicated team focused on delivering top-notch mobile security products while prioritizing your privacy and convenience. We are passionate about innovation and committed to continuous improvement in our offerings.</p>
-    </section>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#products">Explore Products</a>
+            <a class="btn btn-secondary" href="mailto:xtrustai@outlook.com">Talk to Support</a>
+          </div>
 
-    <section class="values">
-        <h3>Our Values</h3>
-        <p>At TrustAI, we believe in:</p>
-        <ul>
-            <li><strong>Integrity:</strong> We act with honesty and transparency in all our dealings.</li>
-            <li><strong>Innovation:</strong> We embrace change and continuously seek better solutions.</li>
-            <li><strong>Customer-Centricity:</strong> Our users are at the heart of everything we do.</li>
-            <li><strong>Collaboration:</strong> We work together to achieve common goals and drive success.</li>
-        </ul>
-    </section>
+          <div class="tagrow">
+            <span class="tag">Privacy-first</span>
+            <span class="tag">Security-focused</span>
+            <span class="tag">Fast & lightweight</span>
+            <span class="tag">Transparent subscriptions</span>
+          </div>
+        </div>
 
-    <section class="products">
-        <h3>Our Innovative Products</h3>
-        <p>
-            <img src="passkey/icon.png" alt="Authenticator Icon" class="product-icon"> 
-            <strong><a href="https://apps.apple.com/app/id6736977421">Authenticator: 2FA & Passkey</a></strong> - A 2FA authenticator integrated with a password manager, designed for simplicity and security. This tool helps you safeguard your online accounts with ease.
-        </p>
-        <p>With our innovative approach, we aim to provide seamless integration with your favorite apps and services, making it easier than ever to protect your digital identity.</p>
-        <a href="https://apps.apple.com/app/id6736977421" class="app-store-link">Download on the App Store</a>
-    </section>
+        <div class="hero-right">
+          <div class="pill"><span aria-hidden="true">🔒</span><span>Privacy-first by design</span></div>
+          <div class="kpi">
+            <div class="kpi-card">
+              <div class="label">Core Focus</div>
+              <div class="value">Security + AI</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Platforms</div>
+              <div class="value">iOS • Mobile</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Principle</div>
+              <div class="value">Simple UX</div>
+            </div>
+            <div class="kpi-card">
+              <div class="label">Support</div>
+              <div class="value">Email Help</div>
+            </div>
+          </div>
+          <div class="pill"><span aria-hidden="true">🛡️</span><span>Clear policies & disclosures</span></div>
+        </div>
+      </div>
+    </header>
 
-    <section class="testimonials">
-        <h3>What Our Users Say</h3>
-        <p>"TrustAI has revolutionized the way I manage my passwords. The Authenticator is easy to use and provides peace of mind!" - Jane D.</p>
-        <p>"I love the seamless experience with TrustAI's products. My online security has never felt so robust." - John S.</p>
-    </section>
+    <main>
 
-    <section class="faq">
+      <div class="grid">
+        <section class="card mission">
+          <h3>Our Mission</h3>
+          <p>
+            We leverage AI to enhance online security and create a safer digital environment for everyone.
+            We build tools that protect data and privacy — without adding complexity.
+          </p>
+        </section>
+
+        <section class="card who-we-are">
+          <h3>Who We Are</h3>
+          <p>
+            A product team obsessed with reliability, privacy, and great mobile experiences.
+            We ship practical AI features that solve real problems and keep your data protected.
+          </p>
+        </section>
+
+        <section class="card values">
+          <h3>Our Values</h3>
+          <ul>
+            <li><strong>Integrity:</strong> Transparent policies and honest product design.</li>
+            <li><strong>Innovation:</strong> Practical AI, not hype.</li>
+            <li><strong>Customer-Centricity:</strong> We optimize for user trust and clarity.</li>
+            <li><strong>Security:</strong> We treat security and privacy as foundational.</li>
+          </ul>
+        </section>
+
+        <section class="card faq">
+          <h3>FAQ</h3>
+          <p><strong>What is a passkey?</strong><br>
+            A passkey is a modern, secure way to sign in without typing a password. It can use Face ID, Touch ID, or device authentication.
+          </p>
+          <p><strong>What is 2FA?</strong><br>
+            Two-factor authentication adds an extra layer of security by requiring a second verification factor in addition to your password.
+          </p>
+        </section>
+      </div>
+
+      <div class="divider"></div>
+
+      <section id="products" class="products">
+        <div class="section-title">
+          <h3>Our Products</h3>
+          <p class="muted">Privacy-first apps, built with modern AI capabilities.</p>
+        </div>
+
+        <div class="product-grid">
+
+
+          <!-- AI Passport & ID Photo Maker -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-weight:800;">ID</div>
+            <div>
+              <h4>AI Passport &amp; ID Photo Maker</h4>
+              <p>
+                Create compliant passport and ID photos with AI-assisted background cleanup and sizing.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-secondary btn-mini" href="mailto:xtrustai@outlook.com">Request App Store link</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Translator -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-weight:800;">TR</div>
+            <div>
+              <h4>AI Translator: Photo, Voice</h4>
+              <p>
+                Translate text, speech, and images with AI-assisted accuracy for everyday travel and work.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-secondary btn-mini" href="mailto:xtrustai@outlook.com">Request App Store link</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI PDF Converter -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-weight:800;">PDF</div>
+            <div>
+              <h4>AI PDF Converter: Files to PDF</h4>
+              <p>
+                Convert documents and images into clean PDFs. Designed for speed, clarity, and simple sharing.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-secondary btn-mini" href="mailto:xtrustai@outlook.com">Request App Store link</a>
+              </div>
+            </div>
+          </div>
+            
+          <!-- Decor Master -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-weight:800;">DM</div>
+            <div>
+              <h4>Decor Master – AI Home Design</h4>
+              <p>
+                Generate design ideas, layouts, and inspiration with AI — built with privacy-first principles.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-secondary btn-mini" href="mailto:xtrustai@outlook.com">Request product link</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Authenticator -->
+          <div class="product">
+            <img src="passkey/icon.png" alt="Authenticator Icon" class="product-icon">
+            <div>
+              <h4><a href="https://apps.apple.com/app/id6736977421">Authenticator: 2FA &amp; Passkey</a></h4>
+              <p>
+                A secure authenticator designed for everyday simplicity. Protect your accounts with 2FA and modern sign-in methods.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-primary btn-mini" href="https://apps.apple.com/app/id6736977421">Download</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Future -->
+          <div class="product">
+            <div class="product-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-weight:800;">+</div>
+            <div>
+              <h4>Future Products</h4>
+              <p>
+                We regularly launch new apps and updates. This page will be updated as new products ship and links go live.
+              </p>
+              <div class="product-actions">
+                <a class="btn btn-secondary btn-mini" href="mailto:xtrustai@outlook.com">Get updates</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="testimonials-wrap">
+        <div class="section-title">
+          <h3>What Users Value</h3>
+          <p class="muted">Security, simplicity, and clarity — without compromises.</p>
+        </div>
+
+        <div class="testimonials">
+          <div class="quote">
+            <b>“Simple and reliable.”</b><br>
+            Clean UI, fast setup, and no confusion about permissions or subscriptions.
+          </div>
+          <div class="quote">
+            <b>“Feels trustworthy.”</b><br>
+            Transparent policies, privacy-first design, and clear product behavior.
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="faq card" style="margin-top:0;">
         <h3>Frequently Asked Questions</h3>
-        <p><strong>Q: What is Passkey?</strong><br>A: Passkey is a secure method for logging into apps and websites without needing a traditional username and password.</p>
-        <p><strong>Q: How does 2FA work?</strong><br>A: Two-factor authentication (2FA) adds an extra layer of security by requiring not only your password but also a second factor, such as a code sent to your mobile device.</p>
-    </section>
-</main>
+        <p><strong>Do you sell user data?</strong><br>
+          No. We do not sell personal data. We only use data necessary to provide and improve the services, as described in our Privacy Policy.
+        </p>
+        <p><strong>How do subscriptions work on iOS?</strong><br>
+          Subscriptions are billed through Apple. You can manage or cancel at any time in Apple ID &gt; Subscriptions. Auto-renew can be turned off before renewal.
+        </p>
+        <p><strong>Need help?</strong><br>
+          Email us anytime at <a href="mailto:xtrustai@outlook.com">xtrustai@outlook.com</a>.
+        </p>
+      </section>
 
-<footer>
-    <p>
-        <a href="privacy.html" style="color: white;">Privacy Policy</a> | 
-        <a href="tos" style="color: white;">Terms of Service</a> | 
-        <a href="mailto:xtrustai@outlook.com" style="color: white;">Contact Us</a>
-    </p>
-    <p>&copy; 2024 TrustAI. All rights reserved.</p>
-</footer>
-</div>
+    </main>
+
+    <footer>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tos">Terms of Service</a>
+        <a href="mailto:xtrustai@outlook.com">Contact Us</a>
+      </div>
+      <div class="small">© 2024 TrustAI. All rights reserved.</div>
+    </footer>
+
+  </div>
 </body>
 </html>
